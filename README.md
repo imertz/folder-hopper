@@ -2,7 +2,7 @@
 
 # Folder Hopper
 
-[![CI](https://github.com/imertz/folder-hopper/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/folder-hopper/actions/workflows/ci.yml)
+[![CI](https://github.com/imertz/folder-hopper/actions/workflows/ci.yml/badge.svg)](https://github.com/imertz/folder-hopper/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/YOUR_PUBLISHER.folder-hopper?label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=YOUR_PUBLISHER.folder-hopper)
 
