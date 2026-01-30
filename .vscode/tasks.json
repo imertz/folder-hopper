@@ -1,0 +1,31 @@
+// folder-hopper/.vscode/tasks.json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "npm",
+            "script": "compile",
+            "problemMatcher": "$esbuild",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "label": "npm: compile"
+        },
+        {
+            "type": "npm",
+            "script": "watch",
+            "problemMatcher": "$esbuild-watch",
+            "isBackground": true,
+            "group": "build",
+            "label": "npm: watch"
+        },
+        {
+            "type": "npm",
+            "script": "lint",
+            "problemMatcher": "$eslint-stylish",
+            "group": "build",
+            "label": "npm: lint"
+        }
+    ]
+}

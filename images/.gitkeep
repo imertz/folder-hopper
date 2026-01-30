@@ -1,0 +1,12 @@
+# folder-hopper/images/.gitkeep
+# This file ensures the images directory is tracked by git.
+# Add your extension icon (icon.png) and demo GIF (demo.gif) here.
+#
+# Icon requirements:
+# - Format: PNG
+# - Size: 128x128 pixels (recommended)
+# - Name: icon.png
+#
+# Demo GIF (optional):
+# - Name: demo.gif
+# - Shows the extension in action

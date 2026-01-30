@@ -1,0 +1,35 @@
+# folder-hopper/.gitignore
+
+# Dependencies
+node_modules/
+
+# Build outputs
+out/
+dist/
+
+# VS Code extension package
+*.vsix
+
+# TypeScript
+*.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# Test output
+.vscode-test/
+coverage/
+
+# Environment
+.env
+.env.local

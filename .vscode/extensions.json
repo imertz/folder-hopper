@@ -1,0 +1,7 @@
+// folder-hopper/.vscode/extensions.json
+{
+    "recommendations": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+    ]
+}

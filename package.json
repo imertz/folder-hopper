@@ -1,0 +1,143 @@
+{
+  "name": "folder-hopper",
+  "displayName": "Folder Hopper",
+  "description": "Quickly navigate to any folder using a searchable list. Open folders in the current window or a new window.",
+  "version": "1.0.0",
+  "publisher": "your-publisher-name",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "folder",
+    "navigate",
+    "go to folder",
+    "open folder",
+    "directory"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/folder-hopper"
+  },
+  "license": "MIT",
+  "contributes": {
+    "commands": [
+      {
+        "command": "folderHopper.goToFolder",
+        "title": "Go to Folder",
+        "category": "Folder Hopper"
+      },
+      {
+        "command": "folderHopper.goToFolderNewWindow",
+        "title": "Go to Folder (New Window)",
+        "category": "Folder Hopper"
+      },
+      {
+        "command": "folderHopper.openParentFolder",
+        "title": "Open Parent Folder",
+        "category": "Folder Hopper"
+      },
+      {
+        "command": "folderHopper.openParentFolderNewWindow",
+        "title": "Open Parent Folder (New Window)",
+        "category": "Folder Hopper"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "folderHopper.goToFolder",
+          "group": "navigation@100",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "folderHopper.goToFolderNewWindow",
+          "group": "navigation@101",
+          "when": "explorerResourceIsFolder"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "folderHopper.goToFolder",
+          "when": "true"
+        },
+        {
+          "command": "folderHopper.goToFolderNewWindow",
+          "when": "true"
+        },
+        {
+          "command": "folderHopper.openParentFolder",
+          "when": "workspaceFolderCount > 0"
+        },
+        {
+          "command": "folderHopper.openParentFolderNewWindow",
+          "when": "workspaceFolderCount > 0"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Folder Hopper",
+      "properties": {
+        "folderHopper.maxDepth": {
+          "type": "number",
+          "default": 5,
+          "minimum": 1,
+          "maximum": 20,
+          "description": "Maximum depth to scan for subfolders"
+        },
+        "folderHopper.excludePatterns": {
+          "type": "array",
+          "default": [
+            "node_modules",
+            ".git",
+            ".svn",
+            ".hg",
+            "__pycache__",
+            ".venv",
+            "venv",
+            ".idea",
+            ".vscode",
+            "dist",
+            "build",
+            "out",
+            "target",
+            ".next",
+            ".nuxt"
+          ],
+          "description": "Folder names to exclude from the folder list"
+        },
+        "folderHopper.showHiddenFolders": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show hidden folders (starting with a dot)"
+        },
+        "folderHopper.sortAlphabetically": {
+          "type": "boolean",
+          "default": true,
+          "description": "Sort folders alphabetically"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --minify",
+    "watch": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --sourcemap --watch",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/vscode": "^1.74.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "esbuild": "^0.19.8",
+    "eslint": "^8.55.0",
+    "typescript": "^5.3.2"
+  }
+}

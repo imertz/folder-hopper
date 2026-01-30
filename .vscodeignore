@@ -1,0 +1,34 @@
+# folder-hopper/.vscodeignore
+
+# Source files (we ship compiled dist/)
+src/
+out/
+
+# Config files
+.gitignore
+.editorconfig
+.prettierrc
+tsconfig.json
+eslint.config.mjs
+
+# Development
+node_modules/
+.vscode/
+.vscode-test/
+
+# Build artifacts
+*.vsix
+
+# Documentation (keep README.md and CHANGELOG.md)
+*.md
+!README.md
+!CHANGELOG.md
+
+# Tests
+**/*.test.ts
+coverage/
+
+# Misc
+.DS_Store
+Thumbs.db
+*.log
